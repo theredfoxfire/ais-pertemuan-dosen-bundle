@@ -1,0 +1,18 @@
+{% block content %}
+    <h1 class="title">{{ 'pertemuan_dosen.list'|trans({}, 'AisPertemuanDosenBundle') }}</h1>
+
+    <ul id="pertemuan_dosen-list">
+        {% for pertemuan_dosen in pertemuan_dosens %}
+            <li>
+                <a href="{{ path('api_1_get_pertemuan_dosen', {'id': pertemuan_dosen.id}) }}">{{ pertemuan_dosen.pertemuanid }}</a>
+                {#[<a href="{{ path('api_1_edit_pertemuan_dosens', {'id': pertemuan_dosen.id}) }}">{{ 'pertemuan_dosen.edit.link'|trans({}, 'AisPertemuanDosenBundle') }}</a>]#}
+                {#[<a href="{{ path('api_1_remove_pertemuan_dosens', {'id': pertemuan_dosen.id}) }}">{{ 'pertemuan_dosen.remove.link'|trans({}, 'AisPertemuanDosenBundle') }}</a>]#}
+            </li>
+        {% else %}
+            <li>{{ 'pertemuan_dosen.list.empty'|trans({}, 'AisPertemuanDosenBundle') }}</li>
+        {% endfor %}
+    </ul>
+    <p>
+        <a href="{{ path('api_1_new_pertemuan_dosen') }}">{{ 'pertemuan_dosen.new.link'|trans({}, 'AisPertemuanDosenBundle') }}</a>
+    </p>
+{% endblock %}

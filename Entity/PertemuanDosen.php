@@ -170,4 +170,3 @@ class PertemuanDosen implements PertemuanDosenInterface
         return $this->is_delete;
     }
 }
-
